@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebView Lab</title>
+  <style>
+    body { margin:0; font-family:sans-serif }
+    header { padding:8px; background:#111; color:#fff }
+    iframe { width:100%; height:calc(100vh - 40px); border:0 }
+  </style>
+</head>
+<body>
+
+<header>
+  <input id="addressBar" placeholder="https://example.com" style="width:70%">
+  <button onclick="openUrl()">Open</button>
+</header>
+
+<iframe id="webview"></iframe>
+
+<script>
+function openUrl() {
+  const url = addressBar.value;
+  webview.src = `/_runtime/view?url=${encodeURIComponent(url)}`;
+}
+</script>
+
+</body>
+</html>
